@@ -6,6 +6,5 @@
     background-position: 0px 0px, 50% 50%;
     background-size: auto, cover; */
     color: #fff;
-    padding-left: 6%;
-    padding-top: 10%;
+    z-index: -999;
 }
