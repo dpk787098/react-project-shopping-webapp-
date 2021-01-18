@@ -21,16 +21,36 @@
 }
 
 .nav_item{
+    box-sizing: border-box;
     text-decoration: none;
     color: #fff;
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+
+.nav_item:hover{
+    background-color: #333;
 }
 
 .cart_icon_wrapper{
     border-radius: 5px;
     background-color: #222;
     height: max-content;
-    padding: 10px 20px;
+    padding: 7px 15px;
     cursor: pointer;
+    position: relative;
+}
+
+.cart_icon_wrapper > p{
+    position: absolute;
+    background-color: #fff;
+    color: #000;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 50%;
+    top: -16px;
+    right: -6px;
 }
 
 .cart_icon_wrapper > img{

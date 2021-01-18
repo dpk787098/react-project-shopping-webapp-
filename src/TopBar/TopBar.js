@@ -14,13 +14,14 @@ class TopBar extends Component {
             <div className="top_bar_container">
                 <img src={BrandLogo} alt="brand logo" />
                 <nav className="nav_wrapper">
-                        <Link to='/' className="nav_item">Home</Link>
-                        <Link to='/about' className="nav_item">About</Link>
-                        <Link to='/shop' className="nav_item">Shop</Link>
-                        <Link to='/donate' className="nav_item">Donate</Link>
-                        <Link to='/contact' className="nav_item">Contact</Link>
-                    <div className="cart_icon_wrapper">
+                    <Link to='/' className="nav_item">Home</Link>
+                    <Link to='/about' className="nav_item">About</Link>
+                    <Link to='/shop' className="nav_item">Shop</Link>
+                    <Link to='/donate' className="nav_item">Donate</Link>
+                    <Link to='/contact' className="nav_item">Contact</Link>
+                    <div onClick={this.props.onClick} className="cart_icon_wrapper">
                         <img src={CartIcon} alt="cart icon" />
+                        <p>1</p>
                     </div>
                 </nav>
             </div>

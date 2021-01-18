@@ -8,18 +8,41 @@ import Donate from './Donate/Donate';
 import Contact from './Contact/Contact';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import CovidAlert from './CovidAlert/CovidAlert';
+import ProductDetailsPage from './ProductDetailsPage/ProductDetailsPage';
+import CartDetailsSlide from './CartDetailsSlide/CartDetailsSlide';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = { 
+      cartDataDisplay: false
+     }
   }
+
+  displayCart = () => {
+    this.setState({cartDataDisplay: !this.state.cartDataDisplay})
+  }
+
+
+
+
+
+
   render() {
     return ( 
-      <BrowserRouter>
+      <BrowserRouter className="main_container">
+        {
+          this.state.cartDataDisplay ? 
+            "" 
+            : 
+            <div onClick={this.displayCart} className="cart_content_container">
+              <CartDetailsSlide close={this.displayCart} />
+            </div>
+        }
         <div className="top_bar_wrapper">
           <Announcement />
-          <TopBar />
+          <TopBar onClick={this.displayCart.bind(this)} />
         </div>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -27,6 +50,8 @@ class App extends Component {
           <Route path="/shop" component={Shop} />
           <Route path="/donate" component={Donate} />
           <Route path="/contact" component={Contact} />
+          <Route path="/covid_alert" component={CovidAlert} />
+          <Route path="/product_details_page" component={ProductDetailsPage} />
         </Switch>
       </BrowserRouter>
      );

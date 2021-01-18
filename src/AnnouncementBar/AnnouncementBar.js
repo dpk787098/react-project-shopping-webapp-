@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './AnnouncementBar.css';
 
 class Announcement extends Component {
@@ -9,7 +10,7 @@ class Announcement extends Component {
     render() { 
         return ( 
             <div className="annoucement_banner">
-                <div className="announcement_title">Announcement</div>
+                <Link to="/covid_alert" className="announcement_title">Announcement</Link>
                 <div className="announcement_detail">How we're responding to COVID-19</div>
             </div>
          );

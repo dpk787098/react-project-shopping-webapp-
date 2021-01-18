@@ -30,3 +30,20 @@
     letter-spacing: 0.6px;
     line-height: 1.5;
 }
+
+.btns_container_wrapper{
+    min-height: calc(100vh - 135px);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns_container{
+    border: 2px solid #222222;
+    box-sizing: border-box;
+    width: 40%;
+    padding: 20px;
+    border-radius: 5px;
+}

@@ -6,6 +6,7 @@ import ChatIcon from '../assets/chat_icon.svg';
 import ChatWarningIcon from '../assets/chat_warning_icon.svg';
 import CustomSection from '../CustomSection/CustomSection';
 import CustomInput from '../CustomInput/CustomInput';
+import Footer from '../Footer/Footer';
 
 class Contact extends Component {
     constructor(props) {
@@ -15,7 +16,9 @@ class Contact extends Component {
     render() { 
         return ( 
             <>
-                <LandingSection>
+                <LandingSection
+                    marginTop="135px"
+                >
                     <div className="contact_landing_wrapper">
                         <div className="contact_info_container">
                             <h1>Contact Acme Outdoors</h1>
@@ -95,6 +98,7 @@ class Contact extends Component {
                         </div>
                     </div>
                 </CustomSection>
+                <Footer />
             </> 
         );
     }
