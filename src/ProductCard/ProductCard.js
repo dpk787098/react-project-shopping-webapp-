@@ -9,7 +9,11 @@ class ProductCard extends Component {
     }
     render() { 
         return ( 
-            <Link to='/product_details_page' className="product_card_wrapper">
+            <Link to={{
+                pathname: '/product_details_page',
+                state:  this.props?.data?.id 
+                }}
+            className="product_card_wrapper">
                 <div
                     className="product_card_image_wrapper"
                     style={{

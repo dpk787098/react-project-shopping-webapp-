@@ -34,15 +34,15 @@ class App extends Component {
       <BrowserRouter className="main_container">
         {
           this.state.cartDataDisplay ? 
-            "" 
-            : 
-            <div onClick={this.displayCart} className="cart_content_container">
+            <div  onClick={this.displayCart} className="cart_content_container">
               <CartDetailsSlide close={this.displayCart} />
             </div>
+            :
+            ""
         }
         <div className="top_bar_wrapper">
           <Announcement />
-          <TopBar onClick={this.displayCart.bind(this)} />
+          <TopBar onClick={this.displayCart} />
         </div>
         <Switch>
           <Route exact path="/" component={Home} />
