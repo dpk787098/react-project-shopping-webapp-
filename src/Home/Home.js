@@ -33,7 +33,6 @@ class Home extends Component {
     //     if(newProps.productData !== this.props.productData){
     //         this.setState({productData: newProps.productData})
     //     }
-    //     console.log("should update",newProps.productData)
     // }
 
     render() {

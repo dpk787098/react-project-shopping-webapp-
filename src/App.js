@@ -11,18 +11,22 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CovidAlert from './CovidAlert/CovidAlert';
 import ProductDetailsPage from './ProductDetailsPage/ProductDetailsPage';
 import CartDetailsSlide from './CartDetailsSlide/CartDetailsSlide';
+import OrderConfirmationPage from './OrderConfirmationPage/OrderConfirmationPage';
+import { connect } from 'react-redux';
+import { cartOpenCloseAction } from './actions/actions';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      cartDataDisplay: false
      }
   }
 
+
   displayCart = () => {
-    this.setState({cartDataDisplay: !this.state.cartDataDisplay})
+    this.props.cartOpenClose();
   }
+
 
 
 
@@ -33,7 +37,7 @@ class App extends Component {
     return ( 
       <BrowserRouter className="main_container">
         {
-          this.state.cartDataDisplay ? 
+          this.props?.cartOpen ?
             <div  onClick={this.displayCart} className="cart_content_container">
               <CartDetailsSlide close={this.displayCart} />
             </div>
@@ -52,10 +56,19 @@ class App extends Component {
           <Route path="/contact" component={Contact} />
           <Route path="/covid_alert" component={CovidAlert} />
           <Route path="/product_details_page" component={ProductDetailsPage} />
+          <Route path="/order_confirmation_page" component={OrderConfirmationPage} />
         </Switch>
       </BrowserRouter>
      );
   }
 }
  
-export default App;
+const mapStateToProps = (globalStore) => ({
+  cartOpen: globalStore?.productReducer?.cartOpen
+})
+
+const mapDispatchToProps = {
+  cartOpenClose: ()=>cartOpenCloseAction()
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)( App );

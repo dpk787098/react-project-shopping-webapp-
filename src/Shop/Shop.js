@@ -5,13 +5,26 @@ import ProductCard from '../ProductCard/ProductCard';
 import Footer from '../Footer/Footer';
 import BlackBanner from '../BlackBanner/BlackBanner';
 import { connect } from 'react-redux';
-import { storeProductsDataAction } from '../actions/actions';
+import { shopDataAction } from '../actions/actions';
 
 class Shop extends Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = { 
+            shopData: [],
+            selected: 'all',
+         }
     }
+
+    // componentDidMount(){
+    //     this.props.shopDataFilter(this.props.productData);
+    // }
+
+    shopByFilter=(data)=>{
+        this.setState({selected: data});
+        this.props.shopDataFilter(data);
+    }
+
     render() { 
         return ( 
             <>
@@ -29,15 +42,14 @@ class Shop extends Component {
                         <div className="prod_section_left">
                             <h2>Shop by Category</h2>
                             <ul className="category_list">
-                                <li>Gift Cards</li>
-                                <li>Tents</li>
-                                <li>Accessories</li>
-                                <li>Packs</li>
+                                <li className={this.state.selected === 'accessories' ? "selected_filter_btn" : "filter_btn"} onClick={()=>this.shopByFilter ("accessories")}>Accessories</li>
+                                <li className={this.state.selected === 'clothings' ? "selected_filter_btn" : "filter_btn"} onClick={()=>this.shopByFilter("clothings")} >Clothings</li>
+                                <li className={this.state.selected === 'all' ? "selected_filter_btn" : "filter_btn"} onClick={()=>this.shopByFilter("all")} >Show All</li>
                             </ul>
                         </div>
                         <div className="products_container">
                         {
-                            this.props?.productData?.map((data,index)=>
+                            this.props?.shopData?.map((data,index)=>
                                 <ProductCard data={data} key={index} />
                             )
                         }
@@ -51,11 +63,13 @@ class Shop extends Component {
 }
 
 const mapStateToProps = (globalStore) => ({
-    productData: globalStore?.productReducer?.productData
+    productData: globalStore?.productReducer?.productData,
+    shopData: globalStore?.productReducer?.shopData
 })
 
 const mapDispatchToProps = {
-    storeProductsData : (data) =>storeProductsDataAction(data)
+    // storeProductsData : (data) =>storeProductsDataAction(data),
+    shopDataFilter: (data)=>shopDataAction(data)
 }
  
 export default connect(mapStateToProps, mapDispatchToProps)(Shop);
