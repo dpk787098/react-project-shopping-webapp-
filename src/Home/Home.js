@@ -13,6 +13,7 @@ import Footer from '../Footer/Footer';
 import axios from "axios";
 import { connect } from 'react-redux';
 import { storeProductsDataAction } from '../actions/actions';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class Home extends Component {
                     imgLink={home_landing_picture}
                     paddingLeft="6%"
                     paddingTop="6%"
-                    marginTop="135px"
+                    marginTop="131px"
                 >
                     <h1 className="home_landing_title">Serving you since 1989.</h1>
                     <p className="home_landing_description">Acme Outdoors is an outdoor and adventure shop located in the Boathouse District in Oklahoma City.</p>
@@ -103,7 +104,7 @@ class Home extends Component {
                         }
                     </div>
                     <div>
-                        <a className="view_all_btn" href="./products">View All Products</a>
+                        <Link to="/shop" className="view_all_btn">View All Products</Link>
                     </div>
                 </CustomSection>
                 <CustomSection>

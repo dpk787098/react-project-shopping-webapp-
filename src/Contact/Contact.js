@@ -17,7 +17,7 @@ class Contact extends Component {
         return ( 
             <>
                 <LandingSection
-                    marginTop="135px"
+                    marginTop="131px"
                 >
                     <div className="contact_landing_wrapper">
                         <div className="contact_info_container">

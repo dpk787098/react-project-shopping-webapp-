@@ -16,7 +16,7 @@ class Donate extends Component {
             <>
                 <LandingSection 
                     imgLink={DonationLandingPicture}
-                    marginTop="135px"
+                    marginTop="131px"
                 >
                     <div className="donation_landing_content_wrapper">
                         <h2 className="donate_title">Here at Acme Outdoors</h2>

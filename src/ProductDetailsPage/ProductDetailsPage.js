@@ -27,7 +27,7 @@ class ProductDetailsPage extends Component {
     render() { 
         return ( 
             <>
-                <BlackBanner title="White Tent"/>
+                <BlackBanner title={this.state?.cardData?.name}/>
                 {
                     this.state?.cardData?  
                         <div className="product_details_container">

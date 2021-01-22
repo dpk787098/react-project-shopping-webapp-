@@ -27,7 +27,7 @@ class About extends Component {
                     imgLink={about_landing_picture}
                     paddingLeft="6%"
                     paddingTop="6%"
-                    marginTop="135px"
+                    marginTop="131px"
                 >
                     <h1 className="about_title">Your Adventure Awaits</h1>
                     <p className="about_description">Acme Outdoors has everything you need to help you get started today. Check out our wonderful collection of gear that will make your next adventure complete.</p>
